@@ -19,21 +19,15 @@ use App\Http\Controllers\BlogController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('Admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('Admin/home');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles', RolController::class);
-    Route::resource('usuarios', UsuarioController::class);
-    Route::resource('blogs', BlogController::class);
+    Route::resource('/roles', RolController::class);
+    Route::resource('/usuarios', UsuarioController::class);
+    Route::resource('/blogs', BlogController::class);
 });
