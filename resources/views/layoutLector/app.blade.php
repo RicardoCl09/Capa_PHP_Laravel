@@ -28,18 +28,16 @@
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg" style="background-color: #FF7439;"></div>
         <nav class="navbar navbar-expand-lg main-navbar">
-            @include('layouts.header')
-
+            @include('layoutLector.header')
         </nav>
         <div class="main-sidebar main-sidebar-postion">
-            @include('layouts.sidebar')
+            @include('layoutLector.sidebar')
         </div>
-        <!-- Main Content -->
         <div class="main-content">
             @yield('content')
         </div>
         <footer class="main-footer">
-            @include('layouts.footer')
+            @include('layoutLector.footer')
         </footer>
     </div>
 </div>

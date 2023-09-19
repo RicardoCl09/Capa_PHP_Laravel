@@ -34,11 +34,30 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                     
-                                <div class="form-floating">
-                                <textarea class="form-control" name="contenido" style="height: 100px"></textarea>
-                                <label for="contenido">Contenido</label>
+                                <div class="form-group">
+                                    <label for="contenido">Contenido</label>
+                                    <textarea class="form-control" name="contenido" style="height: 100px"></textarea>
                                 </div>
-                            
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="linkVideo">Link de Video</label>
+                                    <input type="text" name="linkVideo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="linkPdf">Link de PDF</label>
+                                    <input type="text" name="linkPdf" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="encuesta">Encuesta</label>
+                                    <input type="text" name="encuesta" class="form-control">
+                                </div>
+                            </div>
+                            <br>
                             <button type="submit" class="btn btn-primary">Guardar</button>                            
                         </div>
                     </form>

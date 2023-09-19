@@ -10,8 +10,6 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                
-            
                         @can('crear-blog')
                         <a class="btn btn-warning" href="{{ route('blogs.create') }}">Nuevo</a>
                         @endcan
@@ -20,7 +18,10 @@
                                 <thead>                                     
                                     <th style="display: none;">ID</th>
                                     <th>Titulo</th>
-                                    <th>Contenido</th>                                    
+                                    <th>Contenido</th>  
+                                    <th>Link Video</th>
+                                    <th>Link PDF</th>
+                                    <th>Encuesta</th>                              
                                     <th>Acciones</th>                                                                   
                               </thead>
                               <tbody>
@@ -29,6 +30,9 @@
                                 <td style="display: none;">{{ $blog->id }}</td>                                
                                 <td>{{ $blog->titulo }}</td>
                                 <td>{{ $blog->contenido }}</td>
+                                <td>{{ $blog->linkVideo }}</td>
+                                <td>{{ $blog->linkPdf }}</td>
+                                <td>{{ $blog->encuesta  }}</td>
                                 <td>
                                     <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">                                        
                                         @can('editar-blog')

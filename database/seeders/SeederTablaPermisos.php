@@ -17,6 +17,11 @@ class SeederTablaPermisos extends Seeder
     public function run()
     {
         $permisos = [
+            // Usuarios
+            'ver-usuario',
+            'crear-usuario',
+            'editar-usuario',
+            'borrar-usuario',
             // Roles
             'ver-rol',
             'crear-rol',
@@ -26,7 +31,7 @@ class SeederTablaPermisos extends Seeder
             'ver-blog',
             'crear-blog',
             'editar-blog',
-            'borral-blog'
+            'borra-blog'
         ];
         foreach($permisos as $permiso) {
             Permission::create(['name'=>$permiso]);

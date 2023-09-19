@@ -17,6 +17,9 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('contenido');
+            $table->string('linkVideo');
+            $table->string('linkPdf');
+            $table->string('encuesta');
             $table->timestamps();
         });
     }

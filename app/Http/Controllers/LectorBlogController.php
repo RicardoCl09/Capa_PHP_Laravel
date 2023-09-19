@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 
-class BlogController extends Controller
+class LectorBlogController extends Controller
 {
 
     function __construct()
     {
-        $this->middleware('permission:ver-blog|crear-blog|editar-blog|borrar-blog|descargar-blog', ['only'=>['index']]);
-        $this->middleware('permission:crear-blog', ['only'=>['create','store']]);
-        $this->middleware('permission:editar-blog', ['only'=>['edit','update']]);
-        $this->middleware('permission:borrar-blog', ['only'=>['destroy']]);
+        $this->middleware('permission:ver-blog|descargar-blog', ['only'=>['index']]);
     }
 
     /**
@@ -24,7 +21,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::paginate(5);
-        return view('blogs.index', compact('blogs'));
+        return view('LectorBlogs.index', compact('blogs'));
     }
 
     /**
@@ -34,7 +31,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blogs.crear');
+        //
     }
 
     /**
@@ -45,13 +42,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'titulo' => 'required',
-            'contenido' => 'required',
-            'encuesta' => 'required',
-        ]);
-        Blog::create($request->all());
-        return redirect()->route('blogs.index');
+        //
     }
 
     /**
@@ -62,7 +53,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        return view('blog.content', ['blog' => Blog::findOrFail($id)]);
+        return View('LectorBlogs.Capac', ['blog' => Blog::findOrFail($id)]);
     }
 
     /**
@@ -71,9 +62,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        return view('blogs.editar', compact('blog'));
+        //
     }
 
     /**
@@ -83,15 +74,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, $id)
     {
-        request()->validate([
-            'titulo' => 'required',
-            'contenido' => 'required',
-            'encuesta' => 'required',
-        ]);
-        $blog->update($request->all());
-        return redirect()->route('blogs.index');
+        //
     }
 
     /**
@@ -100,9 +85,8 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        $blog->delete();
-        return redirect()->route('blogs.index');
+        //
     }
 }

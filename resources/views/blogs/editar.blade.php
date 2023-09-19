@@ -34,13 +34,30 @@
                                    <input type="text" name="titulo" class="form-control" value="{{ $blog->titulo }}">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                                    
-                                <div class="form-floating">
+                            <div class="col-xs-12 col-sm-12 col-md-12">                                                    
+                                <div class="form-group">
                                 <label for="contenido">Contenido</label>
                                 <textarea class="form-control" name="contenido" style="height: 100px">{{ $blog->contenido }}</textarea>                                
-                                
                                 </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="link">Link de Video</label>
+                                    <input type="text" name="linkVideo" class="form-control" value="{{ $blog->linkVideo }}">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="link">Link de PDF</label>
+                                    <input type="text" name="linkPdf" class="form-control" value="{{ $blog->linkPdf }}">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="encuesta">Encuesta</label>
+                                    <textarea class="form-control" name="encuesta" style="height: 100px;">{{ $blog->encuesta }}</textarea>
+                                </div>
+                            </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Guardar</button>                            
                         </div>
