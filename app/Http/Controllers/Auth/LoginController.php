@@ -37,7 +37,7 @@ class LoginController extends Controller
 
     public function redirectTo() {
         $user = Auth::user()->is_admin;
-        $this->redirectTo = $user ? route('Adminhome') : route('user');
+        $this->redirectTo = $user ? route('Adminhome') : route('LectorBlogs.index');
         return $this->redirectTo;
     }
 

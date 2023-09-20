@@ -26,6 +26,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('Admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('Adminhome');
+// Route::get('/LectorBlogs', [App\Http\Controllers\LectorBlogController::class, 'index'])->name('LectorBlogs');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('/roles', RolController::class);
